@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+<script type="text/javascript" src="https://rally1.rallydev.com/apps/2.0rc3/sdk.js?apiKey=_Fh27qZcREeV8UzQbAH5x3EaQkvYXUNNv8l5W1M2E4k"></script>
+<script type="text/javascript">
+Rally.onReady(function () {
+
+		Ext.define("CustomApp",{
+extend:"Rally.app.App",
+componentCls:"app",
+items:[{xtype: 'container', itemId: 'display_box'}],
+launch:function(){
+
+this.down('#display_box').add({
+xtype: 'rallygrid',
+columnCfgs: [
+'FormattedID',
+'Name',
+'Owner'
+],
+storeConfig: {
+model: 'userstory'
+}
+});
+
+
+}
+});
+
+Rally.launchApp('CustomApp', {
+name:"test",
+parentRepos:""
+});
+});
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+</body>
+</html>
+
